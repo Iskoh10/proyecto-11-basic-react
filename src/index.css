@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+:root {
+  font-family: 'Special Elite', system-ui;
+
+  /*Custom properties*/
+  --isc-sky-blue: #4a90e2;
+  --isc-cloud-gray: #d6dde5;
+  --isc-sun-yellow: #ffd166;
+  --isc-rain-blue: #6c8ebf;
+  --isc-storm-night: #2f3e46;
+  --isc-storm-night-alpha: rgba(47, 62, 70, 0.4);
+  --isc-snow-white: whitesmoke;
+
+  --isc-text-primary: var(--isc-storm-night);
+  --isc-text-light: var(--isc-snow-white);
+  --isc-bg-color: var(--isc-cloud-gray);
+  --isc-accent: var(--isc-sky-blue);
+
+  --isc-br: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}

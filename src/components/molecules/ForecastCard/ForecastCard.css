@@ -1,0 +1,30 @@
+.forecast-card {
+  width: 100%;
+  justify-content: space-between;
+  border: solid var(--isc-cloud-gray);
+  border-width: 1px 0 1px 0;
+  padding: 0.5em;
+  gap: 0.5rem;
+}
+
+.day-temp {
+  gap: 0.5rem;
+}
+
+.day-description {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.day-time {
+  font-weight: bold;
+}
+
+.at-night {
+  gap: 1rem;
+}
+
+.day-precipitation {
+  gap: 0.5rem;
+}

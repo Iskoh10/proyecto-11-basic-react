@@ -1,0 +1,42 @@
+button {
+  background-color: var(--isc-sky-blue);
+  color: var(--isc-text-light);
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  border: transparent;
+  border-radius: var(--isc-br);
+  box-shadow: 2px 2px 4px var(--isc-storm-night);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--isc-storm-night);
+  background: linear-gradient(
+    90deg,
+    var(--isc-sky-blue) 0%,
+    var(--isc-rain-blue) 100%
+  );
+}
+
+button:active {
+  transform: translate(0rem, 0.2rem);
+}
+
+.close-modal-btn {
+  background-color: var(--isc-cloud-gray);
+  color: var(--isc-storm-night);
+  transition: background 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  background: transparent;
+  border: inset 3px solid var(--isc-cloud-gray);
+}
+
+button:disabled {
+  background-color: var(--isc-cloud-gray);
+  color: var(--isc-storm-night);
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}

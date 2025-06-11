@@ -1,0 +1,49 @@
+.info-card {
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--isc-snow-white);
+  padding: 1rem;
+  border: 2px solid var(--isc-storm-night);
+  border-radius: var(--isc-br);
+  z-index: 2;
+}
+
+.weather-header {
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.weather-img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather-img > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.temp-by-city {
+  width: 30%;
+  height: 100%;
+}
+
+.info-data {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.info-data p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 4px 0;
+}
+
+.info-data span {
+  text-align: right;
+}

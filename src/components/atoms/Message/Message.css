@@ -1,0 +1,13 @@
+.message {
+  position: absolute;
+  top: -230px;
+  width: 50%;
+  height: 20%;
+  border-radius: var(--isc-br);
+  background-color: var(--isc-cloud-gray);
+  box-shadow: 2px 2px 2px 0 var(--isc-storm-night);
+}
+
+.message > p {
+  text-align: center;
+}

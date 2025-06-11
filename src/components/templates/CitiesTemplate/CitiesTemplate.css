@@ -1,0 +1,71 @@
+.grid-container {
+  width: 80%;
+  height: 80%;
+  gap: 1rem;
+}
+
+.cityOne,
+.cityTwo,
+.cityThree,
+.cityFour {
+  background: rgba(var(--isc-cloud-gray), 0.5);
+  border: 5px solid var(--isc-snow-white);
+  border-radius: var(--isc-br);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  padding: 1rem;
+}
+
+.name-city {
+  font-size: 2rem;
+}
+
+.temperature {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: start;
+  font-size: 5rem;
+  column-gap: 0.2rem;
+}
+
+.degree {
+  grid-column: 2 / 3;
+  font-size: 5rem;
+  height: 30px;
+}
+
+.unit {
+  grid-column: 2 / 3;
+  font-size: 2rem;
+  margin-top: -3rem;
+  margin-left: 0.2rem;
+}
+
+.data {
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.properties,
+.values {
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.properties {
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.values {
+  align-items: flex-end;
+}

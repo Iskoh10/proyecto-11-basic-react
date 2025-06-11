@@ -1,0 +1,23 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--isc-storm-night-alpha);
+  z-index: 2;
+}
+
+.modal-content {
+  background-color: var(--isc-snow-white);
+  min-width: 300px;
+  height: 16rem;
+  padding: 1rem;
+  border: 2px solid var(--isc-storm-night);
+  border-radius: var(--isc-br);
+  flex-direction: column;
+  position: relative;
+}
+
+.close-modal-btn {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}

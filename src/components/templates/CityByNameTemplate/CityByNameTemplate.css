@@ -1,0 +1,8 @@
+.input-city {
+  width: 40%;
+  height: 20%;
+  border: 2px solid var(--isc-storm-night);
+  border-radius: var(--isc-br);
+  background-color: var(--isc-snow-white);
+  z-index: 2;
+}

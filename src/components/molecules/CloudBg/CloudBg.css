@@ -1,0 +1,12 @@
+.cloud-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  will-change: transform;
+}

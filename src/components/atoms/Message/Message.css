@@ -1,7 +1,8 @@
 .message {
   position: absolute;
   top: -230px;
-  width: 50%;
+  padding: 0.5em;
+  width: auto;
   height: 20%;
   border-radius: var(--isc-br);
   background-color: var(--isc-cloud-gray);

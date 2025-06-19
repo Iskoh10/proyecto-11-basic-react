@@ -7,9 +7,6 @@ const CityByName = () => {
     <main className='city-by-name flex-container'>
       <CityByNameTemplate />
       <CloudBg />
-
-      <h2>Ciudades por nombre</h2>
-      <p>Buscador de ciudades por su nombre</p>
     </main>
   );
 };

@@ -1,1 +1,1 @@
-Hacer footer, imitar el basico de accuweather
+Implementar que mire el localstorage y haga los fetch de nuevo.

@@ -2,52 +2,50 @@ import Slider from '../../molecules/Slider/Slider';
 import DailyForecastContainer from '../DailyForecastContainer/DailyForecastContainer';
 import './FullDataCard.css';
 
-const FullDataCard = () => {
-  const horas = [
-    { hora: '12', temp: 21, precip: 0 },
-    { hora: '13', temp: 22, precip: 10 },
-    { hora: '14', temp: 23, precip: 20 },
-    { hora: '15', temp: 24, precip: 30 },
-    { hora: '16', temp: 25, precip: 35 },
-    { hora: '17', temp: 23, precip: 20 },
-    { hora: '18', temp: 24, precip: 30 },
-    { hora: '19', temp: 25, precip: 35 }
-  ];
+const FullDataCard = ({ cityData }) => {
+  if (!cityData) {
+    return null;
+  }
 
   return (
     <>
       <section className='info-card flex-container'>
-        <h2>Nombre de la Ciudad</h2>
-        <p>Todos los datos y el carrusel del tiempo por horas</p>
+        <h2>{cityData.nameCity}</h2>
         <div className='weather-header flex-container'>
           <div className='weather-img'>
             <img
-              src='https://cdn-icons-png.flaticon.com/512/13434/13434972.png'
-              alt='iconos del tiempo'
+              src={`https://developer.accuweather.com/sites/default/files/${cityData.weatherIcon}-s.png`}
+              alt={cityData.weatherText}
             />
           </div>
           <div className='temperature temp-by-city'>
-            20
+            <p>{cityData.temperature}</p>
             <span className='degree'>°</span>
             <span className='unit'>C</span>
           </div>
         </div>
         <div className='info-data flex-container'>
           <p>
-            Sensación térmica: <span>26ºC</span>
+            Sensación térmica <span>{cityData.realFeel} °C</span>
           </p>
           <p>
-            Viento: <span>6 km/h</span>
+            Viento <span>{cityData.wind} km/h</span>
           </p>
           <p>
-            Ráfagas de viento: <span>11 km/h</span>
+            Ráfagas de viento <span>{cityData.windGusts} km/h</span>
           </p>
           <p>
-            Calidad del aire: <span>Mala</span>
+            Visibilidad <span>{cityData.visibility} km</span>
+          </p>
+          <p>
+            Humedad <span>{cityData.humidity} %</span>
+          </p>
+          <p>
+            Presión <span>{cityData.pressure} km</span>
           </p>
         </div>
-        <Slider horas={horas} />
-        <DailyForecastContainer />
+        {/* <Slider hours={cityData.hourlyForecast} /> */}
+        <DailyForecastContainer days={cityData.dailyForecast} />
       </section>
     </>
   );

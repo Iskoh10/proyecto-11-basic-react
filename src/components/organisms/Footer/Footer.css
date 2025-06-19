@@ -30,7 +30,7 @@
 
 .legacy li:hover,
 .links li:hover {
-  text-shadow: 2px 2px white, -1px -1px black;
+  text-shadow: 2px 2px var(--isc-snow-white), -1px -1px var(--isc-storm-night);
 }
 
 .social-media {

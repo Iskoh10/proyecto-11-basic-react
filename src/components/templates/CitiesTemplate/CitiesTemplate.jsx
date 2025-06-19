@@ -24,6 +24,12 @@ const CitiesTemplate = () => {
   }, []);
 
   const handleCityUpdate = (key, cityData) => {
+    if (cityData?.error) {
+      const updated = { ...cityAssignments, [key]: null };
+      setCityAssignments(updated);
+      localStorage.setItem('cityAssignments', JSON.stringify(updated));
+    }
+
     const updated = { ...cityAssignments, [key]: cityData };
     setCityAssignments(updated);
     localStorage.setItem('cityAssignments', JSON.stringify(updated));
@@ -45,6 +51,12 @@ const CitiesTemplate = () => {
             {city ? (
               <>
                 <h2 className='name-city'>{city.nameCity}</h2>
+                <div className='weather-day flex-container'>
+                  <img
+                    src={`https://developer.accuweather.com/sites/default/files/${city.weatherIcon}-s.png`}
+                    alt={city.weatherText}
+                  />
+                </div>
                 <div className='temperature'>
                   {city.temperature}
                   <span className='degree'>°</span>
@@ -56,7 +68,7 @@ const CitiesTemplate = () => {
                     <p>Sensación térmica</p>
                     <p>Viento</p>
                     <p>Ráfagas de viento</p>
-                    <p>Calidad del aire</p>
+                    <p>Índice UV</p>
                     <p>Humedad</p>
                     <p>Visibilidad</p>
                     <p>Presión</p>
@@ -65,7 +77,7 @@ const CitiesTemplate = () => {
                     <p>{city.realFeel} °C</p>
                     <p>{city.wind} km/h</p>
                     <p>{city.windGusts} km/h</p>
-                    <p>{city.airQuality}</p>
+                    <p>{city.uvIndexText}</p>
                     <p>{city.humidity} %</p>
                     <p>{city.visibility} km</p>
                     <p>{city.pressure} mb</p>

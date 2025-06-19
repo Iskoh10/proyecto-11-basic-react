@@ -1,6 +1,6 @@
+import './NotFound.css';
 import NoisyBackground from '../../components/atoms/NoisyBackground/NoisyBackground';
 import { Link } from 'react-router-dom';
-import './NotFound.css';
 
 const NotFound = () => {
   return (

@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 100svw;
   height: 100svh;
-  background-color: var(--isc-storm-night); /*  #0f0e0e; */
+  background-color: var(--isc-storm-night);
   color: var(--isc-text-light);
 }
 

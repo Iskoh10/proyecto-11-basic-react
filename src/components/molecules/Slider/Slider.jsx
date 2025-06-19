@@ -1,12 +1,12 @@
-import { useState } from 'react';
 import './Slider.css';
+import { useState } from 'react';
 import Button from '../../atoms/Button/Button';
 
-const Slider = ({ horas }) => {
+const Slider = ({ hours }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const itemsPerSlide = 4;
 
-  const maxIndex = horas?.length - itemsPerSlide;
+  const maxIndex = hours?.length - itemsPerSlide;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < maxIndex ? prev + 1 : maxIndex));
@@ -27,13 +27,20 @@ const Slider = ({ horas }) => {
         className='prev-btn flex-container'
       />
       <div className='slider-wrapper flex-container'>
-        {horas
+        {hours
           .slice(currentSlide, currentSlide + itemsPerSlide)
-          .map((hora, index) => (
+          .map((hour, index) => (
             <div key={index} className='slider flex-container'>
-              <p>{hora.hora}:00</p>
-              <p>{hora.temp}°C</p>
-              <p>{hora.precip}%</p>
+              <p>{hour.DateTime.substring(11, 16)}</p>
+              <img
+                src={`https://developer.accuweather.com/sites/default/files/${hour.WeatherIcon.toString().padStart(
+                  2,
+                  '0'
+                )}-s.png`}
+                alt={hour.IconPhrase}
+              />
+              <p>{hour.Temperature.Value} °C</p>
+              <p>💧 {hour.PrecipitationProbability}%</p>
             </div>
           ))}
       </div>

@@ -7,14 +7,36 @@
   gap: 0.5rem;
 }
 
+.forecast-card:hover {
+  background-color: var(--isc-storm-night-alpha);
+}
+
+.day {
+  flex-direction: column;
+  font-size: 1.5em;
+}
+
 .day-temp {
   gap: 0.5rem;
+}
+
+.day-temp > img {
+  width: 20%;
+  object-fit: contain;
+}
+
+.temp-range {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .day-description {
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 0.5rem;
+  width: 30%;
 }
 
 .day-time {
@@ -23,8 +45,10 @@
 
 .at-night {
   gap: 1rem;
+  justify-content: flex-start;
 }
 
-.day-precipitation {
-  gap: 0.5rem;
+.at-night > img {
+  width: 20%;
+  object-fit: contain;
 }

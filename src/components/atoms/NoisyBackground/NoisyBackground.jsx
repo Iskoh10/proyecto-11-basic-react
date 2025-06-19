@@ -29,5 +29,3 @@ const NoisyBackground = () => {
 };
 
 export default NoisyBackground;
-
-//! Tarda mucho en cargar, y tendriamos  que usar props para pasarle el contenedor al que aplicar

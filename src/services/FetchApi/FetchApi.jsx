@@ -57,7 +57,6 @@ const FetchApi = async (cityName) => {
 
     return null;
   } catch (error) {
-    console.error('Error fetching weather data:', error);
     return { error: 'Network or unexpected error' };
   }
 };

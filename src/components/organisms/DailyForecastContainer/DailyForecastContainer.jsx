@@ -5,7 +5,7 @@ const DailyForecastContainer = ({ days }) => {
   if (!days) {
     return null;
   }
-  console.log(days);
+
   return (
     <div className='daily-container flex-container'>
       <h4>Previsión Diaria</h4>

@@ -1,6 +1,6 @@
+import './CitiesTemplate.css';
 import { useEffect, useState } from 'react';
 import Modal from '../../molecules/Modal/Modal';
-import './CitiesTemplate.css';
 import Button from '../../atoms/Button/Button';
 import SearchCityForm from '../../molecules/SearchCityForm/SearchCityForm';
 
@@ -35,8 +35,18 @@ const CitiesTemplate = () => {
     localStorage.setItem('cityAssignments', JSON.stringify(updated));
   };
 
+  const uvIndexTranslated = {
+    Low: 'Bajo',
+    Moderate: 'Moderado',
+    High: 'Alto',
+    'Very High': 'Muy Alto',
+    Extreme: 'Extremo'
+  };
+
+  const translate = (level) => uvIndexTranslated[level] || level;
+
   return (
-    <section className='grid-container'>
+    <section className='cities-container grid-container'>
       {cityKeys.map((key, index) => {
         const city = cityAssignments[key];
         return (
@@ -58,7 +68,7 @@ const CitiesTemplate = () => {
                   />
                 </div>
                 <div className='temperature'>
-                  {city.temperature}
+                  <span className='value-temp'>{city.temperature}</span>
                   <span className='degree'>°</span>
                   <span className='unit'>C</span>
                 </div>
@@ -77,7 +87,7 @@ const CitiesTemplate = () => {
                     <p>{city.realFeel} °C</p>
                     <p>{city.wind} km/h</p>
                     <p>{city.windGusts} km/h</p>
-                    <p>{city.uvIndexText}</p>
+                    <p>{translate(city.uvIndexText)}</p>
                     <p>{city.humidity} %</p>
                     <p>{city.visibility} km</p>
                     <p>{city.pressure} mb</p>

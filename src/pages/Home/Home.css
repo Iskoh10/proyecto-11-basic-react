@@ -29,7 +29,8 @@
   padding: 1em;
   gap: 1em;
   width: 40%;
-  box-shadow: inset -2px -2px 2px black, inset 2px 2px 5px white;
+  box-shadow: inset -2px -2px 2px var(--isc-storm-night),
+    inset 2px 2px 5px var(--isc-snow-white);
 }
 
 .one-by-one p {
@@ -44,4 +45,20 @@
 .modal-img img {
   width: 100%;
   object-fit: contain;
+}
+
+@media screen and (width <= 550px) {
+  .home > p {
+    text-align: center;
+  }
+
+  .modes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cities-explanation,
+  .city-by-name-explanation {
+    width: 90%;
+  }
 }

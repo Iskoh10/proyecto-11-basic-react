@@ -5,6 +5,7 @@ const Footer = () => {
     <section className='footer'>
       <div className='footer-main flex-container'>
         <div className='legacy flex-container'>
+          <h2 className='titles-mobile'>Información Legal</h2>
           <ul className='flex-container'>
             <li>
               <a href='#' onClick={(e) => e.preventDefault()}>
@@ -69,6 +70,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='links'>
+          <h2 className='titles-mobile'>Contenido</h2>
           <ul className='flex-container'>
             <li>
               <a href='#' onClick={(e) => e.preventDefault()}>
@@ -80,6 +82,7 @@ const Footer = () => {
                 Blog
               </a>
             </li>
+            <h2 className='titles-mobile'>Sorporte</h2>
             <li>
               <a href='#' onClick={(e) => e.preventDefault()}>
                 Contacto

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Button from '../../atoms/Button/Button';
 
 const Slider = ({ hours }) => {
+  if (!hours || !Array.isArray(hours) || hours.length === 0) return null;
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const itemsPerSlide = 4;
 

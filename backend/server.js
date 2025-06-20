@@ -48,48 +48,6 @@ Object.entries(routesConfig).forEach(([route, buildUrl]) => {
   });
 });
 
-// app.get('/weather/:cityKey', async (req, res) => {
-//   const cityKey = req.params.cityKey;
-
-//   try {
-//     const response = await fetch(
-//       `https://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${process.env.API_KEY}&details=true`
-//     );
-//     const data = await response.json();
-//     res.status(200).json(data);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Error al obtener datos del tiempo' });
-//   }
-// });
-
-// app.get('/hourly/:cityKey', async (req, res) => {
-//   const cityKey = req.params.cityKey;
-
-//   try {
-//     const response = await fetch(
-//       `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${cityKey}?apikey=${process.env.API_KEY}&metric=true`
-//     );
-//     const data = await response.json();
-//     res.status(200).json(data);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Error al obtener datos del tiempo' });
-//   }
-// });
-
-// app.get('/daily/:cityKey', async (req, res) => {
-//   const cityKey = req.params.cityKey;
-
-//   try {
-//     const response = await fetch(
-//       `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${process.env.API_KEY}&metric=true`
-//     );
-//     const data = await response.json();
-//     res.status(200).json(data);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Error al obtener datos del tiempo' });
-//   }
-// });
-
 app.listen(3000, () => {
   console.log('Servidor levantaddo en: http://localhost:3000');
 });

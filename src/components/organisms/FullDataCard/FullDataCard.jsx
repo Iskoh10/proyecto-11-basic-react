@@ -44,7 +44,7 @@ const FullDataCard = ({ cityData }) => {
             Presión <span>{cityData.pressure} km</span>
           </p>
         </div>
-        {/* <Slider hours={cityData.hourlyForecast} /> */}
+        <Slider hours={cityData.hourlyForecast} />
         <DailyForecastContainer days={cityData.dailyForecast} />
       </section>
     </>

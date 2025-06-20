@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import './SearchCityForm.css';
+import { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import Button from '../../atoms/Button/Button';
 import Message from '../../atoms/Message/Message';
 import FetchApi from '../../../services/FetchApi/FetchApi';
 import { useEffect } from 'react';
-import FetchApi2 from '../../../services/FetchApi2/FetchApi2';
 
 const SearchCityForm = ({
   setCityAssignments = () => {},

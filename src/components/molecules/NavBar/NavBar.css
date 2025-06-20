@@ -1,5 +1,7 @@
 .ul-navbar {
   display: flex;
   width: 100%;
+  gap: 1em;
   justify-content: space-around;
+  flex-wrap: wrap;
 }

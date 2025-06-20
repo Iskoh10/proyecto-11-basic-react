@@ -21,7 +21,7 @@ Este proyecto es una **aplicación web** desarrollada con **React** que permite 
 - Vite
 - Fetch API para solicitudes HTTP
 
-## Installation
+## Instalación
 
 Sigue estos pasos para instalar y ejecutarlo en tu entorno local:
 

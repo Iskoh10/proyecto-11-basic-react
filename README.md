@@ -9,6 +9,7 @@ Este proyecto es una **aplicación web** desarrollada con **React** que permite 
 - Hay 2 modos: uno te permite obtener información del tiempo más genérica de hasta 4 ciudades, y el otro modo te permite buscar una ciudad y obtener información detallada del clima.
 - Primer contacto con React en un proyecto real.
 - Interfaz intuitiva con instrucciones paso a paso en la Home para mejorar la experiencia de usuario **(UI/UX)**
+- En el modo buscar una ciudad, hay una ayuda para mostrar al usuario una lista de ciudades de España, utilizando la api de Geonames (además de ser gratuita y no tener limitaciones de peticiones, AccuWeather no tenia esa utilidad). Con esta utilidad hemos usado useParams para enviar el pais del cual queremos mostrar las ciudades, y una vez obtenemos el listado de ciudades, si hacemos click en cualquiera de ellas nos devolverá al formulario de búsqueda de ciudad con el valor de la ciudad clickeada para que podamos buscar sus datos climáticas, tambien haciendo uso del useParams para extraer los datos desde los parametros query de la url.
 
 ## Consideraciones técnicas
 
@@ -49,12 +50,24 @@ Instala las dependencias necesarias:
 npm install
 ```
 
-### 4. Iniciar el servidor de desarrollo
+### 4. Iniciar el servidor de desarrollo y el del backend
 
 Ejecuta el servidor con el comando:
 
 ```sh
 npm run dev
+```
+
+No olvidar tambien ejecutar el servidor del backend, accediendo primero a su carpeta:
+
+```sh
+cd backend
+```
+
+Posteriormente Ejecutar el servidor con el comando:
+
+```sh
+node server.js
 ```
 
 ### 5. Estructura del proyecto

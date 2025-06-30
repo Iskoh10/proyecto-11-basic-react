@@ -7,11 +7,13 @@ import FetchApi from '../../../services/FetchApi/FetchApi';
 import { useEffect } from 'react';
 
 const SearchCityForm = ({
+  value = '',
+  onChange = () => {},
   setCityAssignments = () => {},
   selectedBox = '',
-  setIsModalOpen = () => {}
+  setIsModalOpen = () => {},
+  setIsLoading
 }) => {
-  const [inputValue, setInputValue] = useState('');
   const [searchCity, setSearchCity] = useState('');
   const [showMsg, setShowMsg] = useState(false);
   const [msgText, setMsgText] = useState('');
@@ -19,8 +21,10 @@ const SearchCityForm = ({
   useEffect(() => {
     if (searchCity) {
       const fetchData = async () => {
+        setIsLoading(true);
         const result = await FetchApi(searchCity);
         handleData(result);
+        setIsLoading(false);
       };
       fetchData();
     }
@@ -29,18 +33,18 @@ const SearchCityForm = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!inputValue.trim()) {
+    if (!value.trim()) {
       showError('Introduce una ciudad');
       return;
     }
 
-    setSearchCity(inputValue);
+    setSearchCity(value);
   };
 
   const showError = (msg) => {
     setMsgText(msg);
     setShowMsg(true);
-    setInputValue('');
+    onChange('');
     setTimeout(() => setShowMsg(false), 5000);
   };
 
@@ -65,7 +69,7 @@ const SearchCityForm = ({
     }
 
     setCityAssignments(dataCity, selectedBox);
-    setInputValue('');
+    onChange('');
     setIsModalOpen(false);
     setShowMsg(false);
   };
@@ -75,9 +79,9 @@ const SearchCityForm = ({
       <form className='flex-container' onSubmit={handleSubmit}>
         <Input
           type='text'
-          value={inputValue}
+          value={value}
           onChange={(e) => {
-            setInputValue(e.target.value);
+            onChange(e.target.value);
           }}
           placeholder='Busca una ciudad'
           id='search-city'

@@ -2,9 +2,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <section className='footer'>
+    <footer className='footer'>
       <div className='footer-main flex-container'>
-        <div className='legacy flex-container'>
+        <section className='legacy flex-container'>
           <h2 className='titles-mobile'>Información Legal</h2>
           <ul className='flex-container'>
             <li>
@@ -33,8 +33,8 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </div>
-        <div className='social-media flex-container'>
+        </section>
+        <section className='social-media flex-container'>
           <div className='logo flex-container'>
             <img src='/accuweather.svg' alt='logo' />
           </div>
@@ -68,8 +68,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        </div>
-        <div className='links'>
+        </section>
+        <section className='links'>
           <h2 className='titles-mobile'>Contenido</h2>
           <ul className='flex-container'>
             <li>
@@ -94,12 +94,12 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </section>
       </div>
       <div className='footer-end flex-container'>
         <p>&lt;/&gt; 2025 Your Weather</p>
       </div>
-    </section>
+    </footer>
   );
 };
 

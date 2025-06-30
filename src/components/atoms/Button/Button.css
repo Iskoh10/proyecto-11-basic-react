@@ -9,7 +9,7 @@ button {
   cursor: pointer;
 }
 
-button:hover:not(:disabled) {
+button:hover:not(:disabled)::not(.help) {
   background-color: var(--isc-storm-night);
   background: linear-gradient(
     90deg,

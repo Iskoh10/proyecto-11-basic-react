@@ -3,7 +3,7 @@ import './Home.css';
 const Home = () => {
   return (
     <>
-      <div className='home flex-container'>
+      <main className='home flex-container'>
         <h2>Your Weather</h2>
         <p>Es una aplicación web para estar actualizad@ sobre el tiempo.</p>
         <div className='modes flex-container'>
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
           </section>
         </div>
-      </div>
+      </main>
     </>
   );
 };

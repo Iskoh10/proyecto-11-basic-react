@@ -48,6 +48,26 @@ Object.entries(routesConfig).forEach(([route, buildUrl]) => {
   });
 });
 
+app.get('/citiesByCountry/geonames/:countryID', async (req, res, next) => {
+  const { countryID } = req.params;
+  const userName = process.env.GEONAMES_USERNAME;
+
+  try {
+    const response = await fetch(
+      `http://api.geonames.org/searchJSON?country=${countryID}&featureClass=P&maxRows=50&username=${userName}`
+    );
+    const data = await response.json();
+
+    if (data.geonames) {
+      return res.status(200).json(data.geonames);
+    } else {
+      return res.status(500).json({ error: 'Error en el servidor' });
+    }
+  } catch (error) {
+    return res.status(500).json({ error: 'Error al obtener las ciudades' });
+  }
+});
+
 app.listen(3000, () => {
   console.log('Servidor levantaddo en: http://localhost:3000');
 });

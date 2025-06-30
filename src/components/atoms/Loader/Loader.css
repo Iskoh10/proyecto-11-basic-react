@@ -1,0 +1,47 @@
+.loader-container {
+  flex-direction: column;
+  gap: 2em;
+  background-color: rgba(245, 245, 245, 0.795);
+  padding: 1em 3em;
+  border-radius: var(--isc-br);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.loader {
+  --isc-loader-gradient: no-repeat
+    radial-gradient(farthest-side, red 90%, #0000);
+
+  width: 100px;
+  aspect-ratio: 1.2;
+  background: var(--isc-loader-gradient) 50% 0,
+    var(--isc-loader-gradient) 0 100%, var(--isc-loader-gradient) 100% 100%;
+  background-size: 35% calc(35% * 1.2);
+  filter: hue-rotate(0deg);
+  animation: move 0.8s infinite linear, colorChange 3s infinite linear;
+}
+
+@keyframes move {
+  0% {
+    background-position: 50% 0, 0 100%, 100% 100%;
+  }
+  50% {
+    background-position: 100% 100%, 50% 0, 0 100%;
+  }
+  100% {
+    background-position: 100% 100%, 50% 0, 0 100%;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

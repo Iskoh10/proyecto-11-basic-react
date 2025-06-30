@@ -57,7 +57,7 @@ const FetchApi = async (cityName) => {
 
     return null;
   } catch (error) {
-    return { error: 'Network or unexpected error' };
+    return { error: 'Te pasaste el numero de peticiones del día' };
   }
 };
 

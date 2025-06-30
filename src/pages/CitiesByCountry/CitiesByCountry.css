@@ -1,0 +1,35 @@
+.list-cities {
+  flex-direction: column;
+  margin-top: 2em;
+  min-height: 100svh;
+}
+
+.list-cities > h2 {
+  font-size: clamp(1em, 5vw, 3em);
+}
+
+.blur-card {
+  width: 80%;
+  background: rgba(214, 221, 229, 0.253);
+  backdrop-filter: blur(8px);
+  padding: 1em;
+  border-radius: var(--isc-br);
+  z-index: 1;
+}
+
+.ul-cities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  place-items: center;
+  padding: 2em;
+  width: 100%;
+}
+
+.li-cities {
+  cursor: pointer;
+}
+
+.li-cities:hover {
+  font-weight: bold;
+}

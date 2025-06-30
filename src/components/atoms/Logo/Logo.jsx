@@ -14,7 +14,7 @@ const Logo = () => {
   }, []);
 
   return (
-    <div>
+    <div className='logo-container'>
       <img
         src='accuweather.svg'
         alt='Logo App'

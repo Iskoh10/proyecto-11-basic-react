@@ -1,31 +1,37 @@
 .info-card {
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-start;
   background-color: var(--isc-snow-white);
   padding: 1rem;
   border: 2px solid var(--isc-storm-night);
   border-radius: var(--isc-br);
-  z-index: 2;
+  z-index: 1;
 }
 
 .info-card > h2 {
-  font-size: 3em;
+  font-size: clamp(2em, 5vw, 4em);
 }
 
 .weather-header {
   width: 100%;
   padding: 1rem;
   gap: 1rem;
+  justify-content: center;
+  position: relative;
 }
 
 .weather-img {
   width: 100px;
   height: 100px;
+  z-index: -1;
 }
 
 .weather-img > img {
-  width: 100%;
   object-fit: contain;
+  width: clamp(200px, 50vw, 600px);
+  height: auto;
+  display: block;
 }
 
 .temp-by-city {
@@ -33,15 +39,22 @@
   height: 100%;
 }
 
+.info-slider {
+  flex-direction: column;
+  width: 100%;
+}
+
 .info-data {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  align-items: center;
+  font-size: clamp(0.8em, 5vw, 1em);
 }
 
 .info-data p {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   height: 100%;
@@ -53,6 +66,125 @@
   text-align: right;
 }
 
+.temperature {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
 .temperature > p {
   width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .info-card {
+    width: 100%;
+    max-width: 70vw;
+  }
+
+  .weather-img > img {
+    width: 100%;
+  }
+
+  .info-slider {
+    flex-direction: row;
+    gap: 2em;
+    padding: 0 2em;
+  }
+
+  .info-data {
+    flex-direction: column;
+    width: 60%;
+    align-items: flex-start;
+  }
+
+  .slider-container {
+    width: 75%;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .info-card {
+    width: 100%;
+  }
+
+  .slider-container {
+    display: none;
+  }
+
+  .daily-container {
+    width: 100%;
+    padding: 2em;
+  }
+
+  .forecast-card {
+    width: 100%;
+  }
+
+  .day-temp {
+    width: 30%;
+  }
+
+  .day-description {
+    align-items: center;
+    text-align: center;
+  }
+
+  .at-night {
+    justify-content: center;
+  }
+
+  .at-night > p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .daily-container {
+    padding: 0.5em;
+  }
+
+  .forecast-card {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 2em;
+    flex-direction: column;
+  }
+
+  .weather-img {
+    width: 100%;
+  }
+
+  .temperature {
+    width: 50%;
+    top: 40%;
+    position: absolute;
+  }
+
+  .day-temp {
+    width: 100%;
+  }
+
+  .day-description {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .at-night {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .temperature > p {
+    font-size: 3em;
+  }
+
+  .temperature span {
+    font-size: 3em;
+  }
 }

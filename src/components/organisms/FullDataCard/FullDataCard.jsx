@@ -24,27 +24,29 @@ const FullDataCard = ({ cityData }) => {
             <span className='unit'>C</span>
           </div>
         </div>
-        <div className='info-data flex-container'>
-          <p>
-            Sensación térmica <span>{cityData.realFeel} °C</span>
-          </p>
-          <p>
-            Viento <span>{cityData.wind} km/h</span>
-          </p>
-          <p>
-            Ráfagas de viento <span>{cityData.windGusts} km/h</span>
-          </p>
-          <p>
-            Visibilidad <span>{cityData.visibility} km</span>
-          </p>
-          <p>
-            Humedad <span>{cityData.humidity} %</span>
-          </p>
-          <p>
-            Presión <span>{cityData.pressure} km</span>
-          </p>
+        <div className='info-slider flex-container'>
+          <div className='info-data flex-container'>
+            <p>
+              Sensación térmica <span>{cityData.realFeel} °C</span>
+            </p>
+            <p>
+              Viento <span>{cityData.wind} km/h</span>
+            </p>
+            <p>
+              Ráfagas de viento <span>{cityData.windGusts} km/h</span>
+            </p>
+            <p>
+              Visibilidad <span>{cityData.visibility} km</span>
+            </p>
+            <p>
+              Humedad <span>{cityData.humidity} %</span>
+            </p>
+            <p>
+              Presión <span>{cityData.pressure} km</span>
+            </p>
+          </div>
+          <Slider hours={cityData.hourlyForecast} />
         </div>
-        <Slider hours={cityData.hourlyForecast} />
         <DailyForecastContainer days={cityData.dailyForecast} />
       </section>
     </>

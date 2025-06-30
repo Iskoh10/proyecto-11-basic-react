@@ -4,7 +4,7 @@ import Modal from '../../molecules/Modal/Modal';
 import Button from '../../atoms/Button/Button';
 import SearchCityForm from '../../molecules/SearchCityForm/SearchCityForm';
 
-const CitiesTemplate = () => {
+const CitiesTemplate = ({ setIsLoading }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBox, setSelectedBox] = useState(null);
   const [cityAssignments, setCityAssignments] = useState({
@@ -13,6 +13,7 @@ const CitiesTemplate = () => {
     cityThree: null,
     cityFour: null
   });
+  const [searchInput, setSearchInput] = useState('');
 
   const cityKeys = ['cityOne', 'cityTwo', 'cityThree', 'cityFour'];
 
@@ -104,11 +105,14 @@ const CitiesTemplate = () => {
       <Modal isOpen={isModalOpen} onClick={() => setIsModalOpen(false)}>
         <h2>Cambiar Ciudad</h2>
         <SearchCityForm
+          value={searchInput}
+          onChange={setSearchInput}
           setCityAssignments={(cityData) =>
             handleCityUpdate(selectedBox, cityData)
           }
           selectedBox={selectedBox}
           setIsModalOpen={setIsModalOpen}
+          setIsLoading={setIsLoading}
         />
         <Button
           text={'Cerrar'}

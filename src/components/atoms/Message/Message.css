@@ -1,12 +1,13 @@
 .message {
   position: absolute;
-  top: -230px;
+  top: 20px;
   padding: 0.5em;
   width: auto;
-  height: 20%;
+  height: 50px;
   border-radius: var(--isc-br);
   background-color: var(--isc-cloud-gray);
   box-shadow: 2px 2px 2px 0 var(--isc-storm-night);
+  z-index: 5;
 }
 
 .message > p {

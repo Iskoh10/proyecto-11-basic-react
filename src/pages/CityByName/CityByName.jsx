@@ -2,10 +2,10 @@ import './CityByName.css';
 import CloudBg from '../../components/molecules/CloudBg/CloudBg';
 import CityByNameTemplate from '../../components/templates/CityByNameTemplate/CityByNameTemplate';
 
-const CityByName = () => {
+const CityByName = ({ setIsLoading }) => {
   return (
     <main className='city-by-name flex-container'>
-      <CityByNameTemplate />
+      <CityByNameTemplate setIsLoading={setIsLoading} />
       <CloudBg />
     </main>
   );

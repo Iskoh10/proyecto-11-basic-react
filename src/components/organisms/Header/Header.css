@@ -1,0 +1,4 @@
+.header {
+  gap: 2em;
+  border-bottom: 2px solid var(--isc-storm-night);
+}
